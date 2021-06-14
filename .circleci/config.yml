@@ -5,23 +5,23 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: npm run lint
       - run: checkout
       - run: node/install-packages
+      - run: rpm run lint
   test:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: npm run test
       - run: checkout
       - run: node/install-packages
+      - run: rpm run test
   analyze:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: npm run audit
       - run: checkout
       - run: node/install-packages
+      - run: rpm run audit
 workflows:
   mywflow:
     jobs:
