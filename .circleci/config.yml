@@ -7,21 +7,21 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - run: rpm run lint
+      - run: npm run lint
   test:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm i
-      - run: rpm run test
+      - run: npm run test
   analyze:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm i
-      - run: rpm run audit
+      - run: npm run audit
 workflows:
   mywflow:
     jobs:
